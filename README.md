@@ -1,0 +1,2 @@
+- Refactored (and probably overengineered) version of my Cafeteria full-stack app. 
+- Hands-on practice with concepts such as IaC, distributed systems, microservices, event-driven architecture, containerization, orchestration, cloud computing, etc. 
