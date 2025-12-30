@@ -57,7 +57,7 @@ jobs:
     - name: Deploy to GKE
       run: |-
 
-        kubectl create deployment identity-service \
+        kubectl create deployment auth-service \
           --image=${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.IMAGE }}:${{ github.sha }} \
           --dry-run=client -o yaml | kubectl apply -f -
         
