@@ -8,7 +8,7 @@ on:
       - 'services/auth-service/**'
 
 env:
-  PROJECT_ID: ${{ secrets.GKE_PROJECT_ID }}
+  PROJECT_ID: ${{ secrets.GKE_PROJECT_KEy }}
   GAR_LOCATION: us-central1
   REPOSITORY: cafeteria-repo
   IMAGE: auth-service
