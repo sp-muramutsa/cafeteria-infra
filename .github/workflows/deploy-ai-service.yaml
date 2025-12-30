@@ -11,7 +11,7 @@ env:
   PROJECT_ID: pac-cafeteria-v1
   GAR_LOCATION: us-central1
   REPOSITORY: cafeteria-repo
-  IMAGE: ai-engine
+  IMAGE: ai-service
   CLUSTER_NAME: cafeteria-cluster
   CLUSTER_ZONE: us-central1-a
 
@@ -62,12 +62,12 @@ jobs:
       - name: Deploy to GKE
         run: |-
           # Create or update the deployment
-          kubectl create deployment ai-engine \
+          kubectl create deployment ai-service \
             --image="${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.IMAGE }}:${{ github.sha }}" \
             --dry-run=client -o yaml | kubectl apply -f -
 
           # Create or upload the service (Load Balancer)
-          kubectl expose deployment ai-engine \
+          kubectl expose deployment ai-service \
             --name=ai-service \
             --type=LoadBalancer \
             --port=80 --target-port=8000 \
