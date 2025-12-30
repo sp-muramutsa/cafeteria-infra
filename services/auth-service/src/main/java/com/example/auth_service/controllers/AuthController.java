@@ -14,7 +14,6 @@ public class AuthController {
     }
 
     @GetMapping("/private")
-    public String privateEndpoint() {
         return "Private end point of the Auth Service";
     }
 }
