@@ -8,7 +8,7 @@ on:
       - 'services/ai-service/**'
 
 env:
-  PROJECT_ID: pac-cafeteria-v1
+  PROJECT_ID: ${{ secrets.GKE_PROJECT_ID }}
   GAR_LOCATION: us-central1
   REPOSITORY: cafeteria-repo
   IMAGE: ai-service
